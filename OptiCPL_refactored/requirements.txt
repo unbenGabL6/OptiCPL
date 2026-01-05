@@ -1,0 +1,15 @@
+# Core dependencies
+torch>=1.9.0
+numpy>=1.21.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Data loading
+openpyxl>=3.0.0  # For Excel file support
+
+# Optional: For better performance
+torchvision>=0.10.0  # If using GPU optimizations
