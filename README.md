@@ -12,9 +12,9 @@ Predict nanomaterial fabrication parameters from gluminescence data via a two-st
 pip install torch pandas numpy scikit-learn matplotlib seaborn openpyxl
 ```
 ### 2. Data and Pretrained Model install
-```
-https://huggingface.co/Zylqaq/OptiCPL
 
+https://huggingface.co/Zylqaq/OptiCPL
+```
 OptiCPL
 ├── Checkpoints
 ├── OptiCPL_refactored
