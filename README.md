@@ -1,4 +1,4 @@
-# OptiCPL - Two-Stage Pipeline
+# OptiCPL - Three-Stage Pipeline
 
 Predict nanomaterial fabrication parameters from gluminescence data via a three-stage deep learning pipeline.
 
