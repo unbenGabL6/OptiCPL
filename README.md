@@ -1,8 +1,6 @@
 # OptiCPL - Two-Stage Pipeline
 
-Predict nanomaterial fabrication parameters from gluminescence data via a two-stage deep learning pipeline.
-
-**Pipeline**: `glum (40-dim) → Stage2 → Features (200-dim) → Stage1 → Fabrication Parameters (8-dim)`
+Predict nanomaterial fabrication parameters from gluminescence data via a three-stage deep learning pipeline.
 
 ## Quick Start
 
@@ -11,7 +9,8 @@ Predict nanomaterial fabrication parameters from gluminescence data via a two-st
 ```bash
 pip install torch pandas numpy scikit-learn matplotlib seaborn openpyxl
 ```
-### 2. Data and Pretrained Model install
+
+### 2. Data and Pretrained Models
 
 https://huggingface.co/Zylqaq/OptiCPL
 ```
@@ -27,9 +26,9 @@ OptiCPL
 
 ### 2. Basic Usage
 
-#### Mode 1: Train Stage1 Model
+#### Mode 1: Train Stage2 Model
 
-Train the Stage1 model on pre-computed features:
+Train the Stage2 model on pre-computed features:
 
 ```bash
 # Basic training
@@ -42,11 +41,11 @@ python main.py train --experiment-name "my_experiment"
 python main.py train --epochs 2000 --lr 0.001 --batch-size 64 --device cuda
 ```
 
-**Training data**: `/home/ylzhang/Nano_HF/OptiCPL/Data/DF_IMG.xlsx` (200-dim features + 8 targets)
+**Training data**: `/home/ylzhang/Nano_HF/OptiCPL/Data/DF_IMG.xlsx`
 
-#### Mode 2: End-to-End Pipeline (from glum)
+#### Mode 2: End-to-End Pipeline (from desired glum)
 
-Run complete pipeline from raw glum data to fabrication parameters:
+Run pipeline from glum data to fabrication parameters:
 
 ```bash
 # Default glum data
@@ -81,14 +80,14 @@ Data_complete_corrected_v7.xlsx
 
 #### Mode 4: Predict with Trained Model
 
-Make predictions using pre-computed features and trained Stage1 model:
+Make predictions using pre-computed features and trained Stage2 model:
 
 ```bash
 # Default settings
 python main.py predict
 
 # Custom paths
-python main.py predict --input features.csv --output predictions.csv --model stage1_model.pth --device cpu
+python main.py predict --input features.csv --output predictions.csv --model stage2_model.pth --device cpu
 ```
 
 **Input**: CSV with 200-dim features [IMG(128) + glum(40) + Optical(32)]
