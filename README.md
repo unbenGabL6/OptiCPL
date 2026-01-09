@@ -135,7 +135,7 @@ python main.py predict --input features.csv --output predictions.csv --model sta
 
 **Experiment Tracking** (`Training_Logs/YYYYMMDD_HHMMSS_experiment_name/`):
 ```
-├── raw_data/            # Copy of input raw data (raw-pipeline mode)
+├── raw_data/            
 ├── features/
 │   ├── glum_parsed.csv      # Parsed glum data
 │   ├── optical_features.csv # 32-dim Optical features
@@ -143,7 +143,7 @@ python main.py predict --input features.csv --output predictions.csv --model sta
 │   └── combined_features.csv # 200-dim merged features
 ├── models/
 │   ├── stage1_best_model.pth
-│   └── stage2/              # Copies of VAE/SimCLR models
+│   └── stage2/              
 ├── scalers/             # StandardScaler objects
 ├── results/             # predictions.csv (8 fabrication parameters)
 ├── visualizations/      # Training curves and prediction plots
