@@ -25,7 +25,7 @@ wheels/
 *.pkl
 
 # Data files
-*.xlsx
+# *.xlsx  # 保留 Data 目录中的数据文件
 *.csv
 *.xls
 
